@@ -3,6 +3,8 @@ package by.epam.jmp.app.tradesystem.service;
 import by.epam.jmp.app.tradesystem.model.User;
 import by.epam.jmp.app.tradesystem.model.UserRole;
 
+import java.util.List;
+
 public interface UserService {
 
     /**
@@ -31,5 +33,12 @@ public interface UserService {
      * @return Updated User object
      */
     User updateUserDetails(User user);
+
+    /**
+     * Get all users as list
+     *
+     * @return List of all users
+     */
+    List<User> listAllUsers();
 
 }

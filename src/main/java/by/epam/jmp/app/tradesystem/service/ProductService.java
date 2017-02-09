@@ -20,6 +20,14 @@ public interface ProductService {
     Product createProduct(String name, String description, BigDecimal cost, Vendor vendor);
 
     /**
+     * Update product with new values
+     *
+     * @param product Product object with new values
+     * @return Product object with new values
+     */
+    Product updateProduct(Product product);
+
+    /**
      * Get product by ID
      *
      * @param id ID of product

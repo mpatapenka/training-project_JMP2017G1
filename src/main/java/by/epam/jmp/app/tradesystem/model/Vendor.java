@@ -7,8 +7,8 @@ public class Vendor extends UserCompany {
 
     private final List<Product> products = new ArrayList<Product>();
 
-    public Vendor(String username, UserRole userRole) {
-        super(username, userRole);
+    public Vendor(String username, String password) {
+        super(username, password, UserRole.VENDOR);
     }
 
     public List<Product> getProducts() {

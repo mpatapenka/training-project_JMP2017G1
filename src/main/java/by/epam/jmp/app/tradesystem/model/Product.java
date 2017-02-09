@@ -30,6 +30,9 @@ public class Product extends IdentifiedType {
     }
 
     public void setCost(BigDecimal cost) {
+        if (cost.compareTo(BigDecimal.ZERO) == -1) {
+            throw new IllegalArgumentException("Cost can't be less then zero.");
+        }
         this.cost = cost;
     }
 

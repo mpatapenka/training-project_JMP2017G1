@@ -4,8 +4,8 @@ public abstract class UserCompany extends User {
 
     private Company company;
 
-    public UserCompany(String username, UserRole userRole) {
-        super(username, userRole);
+    public UserCompany(String username, String password, UserRole userRole) {
+        super(username, password, userRole);
     }
 
     public Company getCompany() {

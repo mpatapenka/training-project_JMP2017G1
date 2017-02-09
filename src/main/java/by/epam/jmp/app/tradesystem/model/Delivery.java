@@ -7,8 +7,8 @@ public class Delivery extends UserCompany {
 
     private final List<Package> packages = new ArrayList<Package>();
 
-    public Delivery(String username, UserRole userRole) {
-        super(username, userRole);
+    public Delivery(String username, String password) {
+        super(username, password, UserRole.DELIVERY);
     }
 
     public List<Package> getPackages() {
