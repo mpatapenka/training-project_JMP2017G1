@@ -6,7 +6,7 @@ public class Order extends IdentifiedType {
 
     private Date orderDate;
     private Product product;
-    private Customer customer;
+    private User customer;
     private FormOfPayment formOfPayment;
 
     public Date getOrderDate() {
@@ -25,11 +25,11 @@ public class Order extends IdentifiedType {
         this.product = product;
     }
 
-    public Customer getCustomer() {
+    public User getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(User customer) {
         this.customer = customer;
     }
 

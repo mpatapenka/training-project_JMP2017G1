@@ -1,34 +1,35 @@
 package by.epam.jmp.app.tradesystem.service.impl;
 
+import by.epam.jmp.app.tradesystem.context.DataProvidersHolder;
 import by.epam.jmp.app.tradesystem.dataprovider.UserProvider;
-import by.epam.jmp.app.tradesystem.dataprovider.factory.UserProviderFactory;
-import by.epam.jmp.app.tradesystem.model.*;
-import by.epam.jmp.app.tradesystem.model.factory.UserFactory;
+import by.epam.jmp.app.tradesystem.model.User;
+import by.epam.jmp.app.tradesystem.model.UserRole;
 import by.epam.jmp.app.tradesystem.service.UserService;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    private final UserProvider userProvider = UserProviderFactory.getUserProviderInstance();
+    private final UserProvider userProvider = DataProvidersHolder.getUserProviderInstance();
 
     @Override
     public User login(String username, String password) {
-        // TODO
+        for (User user : userProvider.getAll()) {
+            if (username.equals(user.getUsername()) && password.equals(user.getPassword())) {
+                return user;
+            }
+        }
         return null;
     }
 
     @Override
     public User register(String username, String password, UserRole userRole) {
-        User user = UserFactory.getUser(username, password, userRole);
-        userProvider.addOrUpdate(user);
-        return user;
-    }
-
-    @Override
-    public User updateUserDetails(User user) {
-        userProvider.addOrUpdate(user);
-        return user;
+        User existingUser = userProvider.loadUserByUsername(username);
+        if (existingUser == null) {
+            User user = new User(username, password, userRole);
+            return userProvider.create(user);
+        }
+        return null;
     }
 
     @Override

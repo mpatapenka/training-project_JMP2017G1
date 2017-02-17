@@ -27,14 +27,6 @@ public interface UserService {
     User register(String username, String password, UserRole userRole);
 
     /**
-     * Update information of existing user
-     *
-     * @param user User object with updated information
-     * @return Updated User object
-     */
-    User updateUserDetails(User user);
-
-    /**
      * Get all users as list
      *
      * @return List of all users

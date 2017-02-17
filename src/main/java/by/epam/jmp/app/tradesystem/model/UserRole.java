@@ -19,11 +19,16 @@ public final class UserRole extends IdentifiedType {
     public static final String DELIVERY_NAME = "DELIVERY_ROLE";
     public static final int DELIVERY_CODE = 2;
 
+    public static final String ADMIN_NAME = "ADMIN_ROLE";
+    public static final int ADMIN_CODE = 3;
+
     public static final UserRole VENDOR = new UserRole(VENDOR_NAME, VENDOR_CODE);
 
     public static final UserRole CUSTOMER = new UserRole(CUSTOMER_NAME, CUSTOMER_CODE);
 
     public static final UserRole DELIVERY = new UserRole(DELIVERY_NAME, DELIVERY_CODE);
+
+    public static final UserRole ADMIN = new UserRole(ADMIN_NAME, ADMIN_CODE);
 
     public String getName() {
         return name;

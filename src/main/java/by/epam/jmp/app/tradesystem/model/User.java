@@ -1,12 +1,10 @@
 package by.epam.jmp.app.tradesystem.model;
 
-public abstract class User extends IdentifiedType {
+public class User extends IdentifiedType {
 
     private final String username;
     private final String password;
     private final UserRole userRole;
-    private String firstName;
-    private String lastName;
 
     public User(String username, String password, UserRole userRole) {
         this.username = username;
@@ -26,22 +24,6 @@ public abstract class User extends IdentifiedType {
         return userRole;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,19 +33,15 @@ public abstract class User extends IdentifiedType {
 
         if (username != null ? !username.equals(user.username) : user.username != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (userRole != null ? !userRole.equals(user.userRole) : user.userRole != null) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
-        return lastName != null ? lastName.equals(user.lastName) : user.lastName == null;
+        return userRole != null ? userRole.equals(user.userRole) : user.userRole == null;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
-                ", password='" + password + '\'' + // TODO: show unencrypted password is bad idea
+                ", password='" + password + '\'' +
                 ", userRole=" + userRole +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
                 "} " + super.toString();
     }
 

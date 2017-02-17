@@ -1,10 +1,9 @@
 package by.epam.jmp.app.tradesystem.service.impl;
 
+import by.epam.jmp.app.tradesystem.context.DataProvidersHolder;
 import by.epam.jmp.app.tradesystem.dataprovider.ProductProvider;
-import by.epam.jmp.app.tradesystem.dataprovider.factory.ProductProviderFactory;
 import by.epam.jmp.app.tradesystem.model.Product;
-import by.epam.jmp.app.tradesystem.model.Vendor;
-import by.epam.jmp.app.tradesystem.model.factory.ProductFactory;
+import by.epam.jmp.app.tradesystem.model.User;
 import by.epam.jmp.app.tradesystem.service.ProductService;
 
 import java.math.BigDecimal;
@@ -12,24 +11,22 @@ import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
 
-    private final ProductProvider productProvider = ProductProviderFactory.getProductProviderInstance();
+    private final ProductProvider productProvider = DataProvidersHolder.getProductProviderInstance();
 
     @Override
-    public Product createProduct(String name, String description, BigDecimal cost, Vendor vendor) {
-        Product product = ProductFactory.getProduct(name, description, cost, vendor);
-        productProvider.addOrUpdate(product);
-        return product;
+    public Product createProduct(String name, String description, BigDecimal cost, User vendor) {
+        Product product = Product.buildProduct(name, description, cost, vendor);
+        return productProvider.create(product);
     }
 
     @Override
     public Product updateProduct(Product product) {
-        productProvider.addOrUpdate(product);
-        return product;
+        return productProvider.update(product);
     }
 
     @Override
     public Product getProduct(long id) {
-        return null;
+        return productProvider.find(id);
     }
 
     @Override
@@ -39,7 +36,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getProducts(String vendorUsername) {
-        return null;
+        return productProvider.loadProductsByVendor(vendorUsername);
+    }
+
+    @Override
+    public void deleteProduct(Product product) {
+        productProvider.delete(product);
     }
 
 }

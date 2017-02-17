@@ -1,7 +1,7 @@
 package by.epam.jmp.app.tradesystem.service;
 
 import by.epam.jmp.app.tradesystem.model.Product;
-import by.epam.jmp.app.tradesystem.model.Vendor;
+import by.epam.jmp.app.tradesystem.model.User;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,10 +14,10 @@ public interface ProductService {
      * @param name        name of product
      * @param description description of product
      * @param cost        cost of product
-     * @param vendor      Vendor object, who sells this product
+     * @param vendor      User object, who sells this product
      * @return new Product object
      */
-    Product createProduct(String name, String description, BigDecimal cost, Vendor vendor);
+    Product createProduct(String name, String description, BigDecimal cost, User vendor);
 
     /**
      * Update product with new values
@@ -49,5 +49,12 @@ public interface ProductService {
      * @return List of Products for specified vendor
      */
     List<Product> getProducts(String vendorUsername);
+
+    /**
+     * Delete product
+     *
+     * @param product specified product
+     */
+    void deleteProduct(Product product);
 
 }
