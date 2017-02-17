@@ -7,7 +7,7 @@ public class Package extends IdentifiedType {
     private Date departureDate;
     private int daysForDelivery;
     private Order order;
-    private Delivery delivery;
+    private User delivery;
     private boolean isPendingSend = true;
 
     public Date getDepartureDate() {
@@ -34,11 +34,11 @@ public class Package extends IdentifiedType {
         this.order = order;
     }
 
-    public Delivery getDelivery() {
+    public User getDelivery() {
         return delivery;
     }
 
-    public void setDelivery(Delivery delivery) {
+    public void setDelivery(User delivery) {
         this.delivery = delivery;
     }
 

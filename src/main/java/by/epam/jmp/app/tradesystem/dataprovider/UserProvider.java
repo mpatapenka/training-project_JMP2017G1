@@ -2,15 +2,14 @@ package by.epam.jmp.app.tradesystem.dataprovider;
 
 import by.epam.jmp.app.tradesystem.model.User;
 
-import java.util.List;
+public interface UserProvider extends GenericProvider<User> {
 
-/**
- * Common logic for providers might be extracted to GenericProvider (like as #addOrUpdate, #getAll methods)
- */
-public interface UserProvider {
-
-    void addOrUpdate(User user);
-
-    List<User> getAll();
+    /**
+     * Find user by username
+     *
+     * @param username specified username
+     * @return user object with specified username
+     */
+    User loadUserByUsername(String username);
 
 }

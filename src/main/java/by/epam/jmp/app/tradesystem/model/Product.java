@@ -7,7 +7,7 @@ public class Product extends IdentifiedType {
     private String name;
     private String description;
     private BigDecimal cost;
-    private Vendor vendor;
+    private User vendor;
 
     public String getName() {
         return name;
@@ -36,11 +36,11 @@ public class Product extends IdentifiedType {
         this.cost = cost;
     }
 
-    public Vendor getVendor() {
+    public User getVendor() {
         return vendor;
     }
 
-    public void setVendor(Vendor vendor) {
+    public void setVendor(User vendor) {
         this.vendor = vendor;
     }
 
@@ -65,6 +65,15 @@ public class Product extends IdentifiedType {
                 ", cost=" + cost +
                 ", vendor=" + vendor +
                 "} " + super.toString();
+    }
+
+    public static Product buildProduct(String name, String description, BigDecimal cost, User vendor) {
+        Product product = new Product();
+        product.setName(name);
+        product.setDescription(description);
+        product.setCost(cost);
+        product.setVendor(vendor);
+        return product;
     }
 
 }

@@ -10,10 +10,15 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <!-- Dependencies versions -->
         <junit.version>4.12</junit.version>
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <log4j.version>1.2.17</log4j.version>
 
+        <!-- Plugin versions -->
         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
 
+        <!-- Plugin properties -->
         <maven-compiler-plugin.source>1.8</maven-compiler-plugin.source>
         <maven-compiler-plugin.target>1.8</maven-compiler-plugin.target>
     </properties>
@@ -23,16 +28,28 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
     </dependencies>
 
     <build>
+        <finalName>tradesystem</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
-
                 <configuration>
                     <source>${maven-compiler-plugin.source}</source>
                     <target>${maven-compiler-plugin.target}</target>
