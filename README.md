@@ -1,5 +1,11 @@
 # TradeSystem app for JMP D2-D3
 
+## Branching strategy
+
+For each task will be created separate branch with task name (for example JMP7.3-Troubleshooting).
+All changes related to task will be stored in appropriate branch. Common changes will be merged to master at once.
+Branches for each task will be merged to master every time when task will be completed. Task branches will not be deleted.
+
 ## Task descriptions:
 
 1. **JMP7.2-Architecture task:**
