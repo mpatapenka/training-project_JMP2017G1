@@ -8,4 +8,4 @@
 
 2. **JMP7.3-Troubleshooting task:**
     - Use runner class (***by.epam.jmp.app.tradesystem.runner.JMP7_3_Troubleshooting***) for start deadlock simulation.
-    - You can find thread dump for this simulation in ****\TradeSystem\others\JMP7.3-Troubleshooting_ThreadDump.txt** file.
+    - You can find thread dump for this simulation in __**\TradeSystem\others\JMP7.3-Troubleshooting_ThreadDump.txt__ file.
