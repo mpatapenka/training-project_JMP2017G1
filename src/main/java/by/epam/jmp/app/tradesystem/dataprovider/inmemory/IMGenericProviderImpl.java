@@ -21,11 +21,12 @@ abstract class IMGenericProviderImpl<T extends IdentifiedType> implements Generi
     @Override
     public T create(T item) {
         if (item.isNew()) {
+            T itemClone = SerializationUtils.clone(item);
             synchronized (this) {
                 long id = generateId();
-                item.setId(id);
-                entries.put(id, item);
-                return SerializationUtils.clone(item);
+                itemClone.setId(id);
+                entries.put(id, itemClone);
+                return itemClone;
             }
         }
         throw new IllegalArgumentException("Can't create item with ID because it should not be new.");
@@ -53,12 +54,16 @@ abstract class IMGenericProviderImpl<T extends IdentifiedType> implements Generi
 
     @Override
     public T find(long id) {
-        return entries.get(id);
+        return SerializationUtils.clone(entries.get(id));
     }
 
     @Override
     public List<T> getAll() {
-        return new ArrayList<T>(entries.values());
+        List<T> result = new ArrayList<T>();
+        for (T item : entries.values()) {
+            result.add(SerializationUtils.clone(item));
+        }
+        return result;
     }
 
 }
