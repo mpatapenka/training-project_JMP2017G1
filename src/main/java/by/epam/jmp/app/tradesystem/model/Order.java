@@ -64,4 +64,13 @@ public class Order extends IdentifiedType {
                 '}';
     }
 
+    public static Order buildOrder(Date orderDate, Product product, User customer, FormOfPayment fop) {
+        Order order = new Order();
+        order.setOrderDate(orderDate);
+        order.setProduct(product);
+        order.setCustomer(customer);
+        order.setFormOfPayment(fop);
+        return order;
+    }
+
 }
