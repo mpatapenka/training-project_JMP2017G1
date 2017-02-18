@@ -1,0 +1,122 @@
+2017-02-19 01:51:15
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.102-b14 mixed mode):
+
+"DestroyJavaVM" #13 prio=5 os_prio=0 tid=0x0000000002f1d800 nid=0x25d4 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Thread-1" #12 prio=5 os_prio=0 tid=0x0000000019ddb800 nid=0x1f7c waiting for monitor entry [0x000000001a72f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.jmp.app.tradesystem.runner.JMP7_3_Troubleshooting$VendorSimulator.run(JMP7_3_Troubleshooting.java:133)
+	- waiting to lock <0x00000000d5e99a20> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMPackageProviderImpl)
+	- locked <0x00000000d5e93920> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMOrderProviderImpl)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Thread-0" #11 prio=5 os_prio=0 tid=0x0000000019dda800 nid=0x15cc waiting for monitor entry [0x000000001a62e000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.jmp.app.tradesystem.runner.JMP7_3_Troubleshooting$DeliverySimulator.run(JMP7_3_Troubleshooting.java:74)
+	- waiting to lock <0x00000000d5e93920> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMOrderProviderImpl)
+	- locked <0x00000000d5e99a20> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMPackageProviderImpl)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Monitor Ctrl-Break" #10 daemon prio=5 os_prio=0 tid=0x0000000019544000 nid=0xb30 runnable [0x0000000019d2e000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	- locked <0x00000000d5bf9770> (a java.io.InputStreamReader)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	- locked <0x00000000d5bf9770> (a java.io.InputStreamReader)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at com.intellij.rt.execution.application.AppMain$1.run(AppMain.java:84)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Service Thread" #9 daemon prio=9 os_prio=0 tid=0x0000000019436800 nid=0x9b8 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #8 daemon prio=9 os_prio=2 tid=0x0000000017d1d800 nid=0x128 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #7 daemon prio=9 os_prio=2 tid=0x0000000017d1d000 nid=0x2784 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #6 daemon prio=9 os_prio=2 tid=0x0000000017cc1800 nid=0x3ec waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000000017cc0000 nid=0x29f0 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000000017cbc800 nid=0x181c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000000000311a000 nid=0x24bc in Object.wait() [0x000000001903f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d5a08e98> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000d5a08e98> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000000003111000 nid=0x1208 in Object.wait() [0x0000000018f3f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d5a06b40> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x00000000d5a06b40> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"VM Thread" os_prio=2 tid=0x0000000017c87800 nid=0x19d4 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000000003037000 nid=0xe58 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000000003038800 nid=0x1a28 runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x000000000303a800 nid=0x378 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x000000000303c000 nid=0x1314 runnable 
+
+"VM Periodic Task Thread" os_prio=2 tid=0x000000001944c000 nid=0x117c waiting on condition 
+
+JNI global references: 338
+
+
+Found one Java-level deadlock:
+=============================
+"Thread-1":
+  waiting to lock monitor 0x0000000003118a58 (object 0x00000000d5e99a20, a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMPackageProviderImpl),
+  which is held by "Thread-0"
+"Thread-0":
+  waiting to lock monitor 0x0000000003119a28 (object 0x00000000d5e93920, a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMOrderProviderImpl),
+  which is held by "Thread-1"
+
+Java stack information for the threads listed above:
+===================================================
+"Thread-1":
+	at by.epam.jmp.app.tradesystem.runner.JMP7_3_Troubleshooting$VendorSimulator.run(JMP7_3_Troubleshooting.java:133)
+	- waiting to lock <0x00000000d5e99a20> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMPackageProviderImpl)
+	- locked <0x00000000d5e93920> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMOrderProviderImpl)
+	at java.lang.Thread.run(Thread.java:745)
+"Thread-0":
+	at by.epam.jmp.app.tradesystem.runner.JMP7_3_Troubleshooting$DeliverySimulator.run(JMP7_3_Troubleshooting.java:74)
+	- waiting to lock <0x00000000d5e93920> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMOrderProviderImpl)
+	- locked <0x00000000d5e99a20> (a by.epam.jmp.app.tradesystem.dataprovider.inmemory.IMPackageProviderImpl)
+	at java.lang.Thread.run(Thread.java:745)
+
+Found 1 deadlock.
+
+Heap
+ PSYoungGen      total 38400K, used 9985K [0x00000000d5a00000, 0x00000000d8480000, 0x0000000100000000)
+  eden space 33280K, 30% used [0x00000000d5a00000,0x00000000d63c07b8,0x00000000d7a80000)
+  from space 5120K, 0% used [0x00000000d7f80000,0x00000000d7f80000,0x00000000d8480000)
+  to   space 5120K, 0% used [0x00000000d7a80000,0x00000000d7a80000,0x00000000d7f80000)
+ ParOldGen       total 87552K, used 0K [0x0000000080e00000, 0x0000000086380000, 0x00000000d5a00000)
+  object space 87552K, 0% used [0x0000000080e00000,0x0000000080e00000,0x0000000086380000)
+ Metaspace       used 6444K, capacity 6662K, committed 6784K, reserved 1056768K
+  class space    used 726K, capacity 807K, committed 896K, reserved 1048576K
