@@ -76,4 +76,13 @@ public class Package extends IdentifiedType {
                 "} " + super.toString();
     }
 
+    public static Package buildPackage(Date departureDate, int daysForDelivery, Order order, User delivery) {
+        Package pack = new Package();
+        pack.setDepartureDate(departureDate);
+        pack.setDaysForDelivery(daysForDelivery);
+        pack.setOrder(order);
+        pack.setDelivery(delivery);
+        return pack;
+    }
+
 }
