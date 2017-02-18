@@ -92,4 +92,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### Custom user files ###
+log/
+
 # End of https://www.gitignore.io/api/windows,intellij+iml,code-java,java,maven
