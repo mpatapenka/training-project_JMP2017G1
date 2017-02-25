@@ -1,4 +1,4 @@
-package by.epam.jmp.app.tradesystem.runner;
+package by.epam.jmp.troubleshooting;
 
 import by.epam.jmp.app.tradesystem.context.DataProvidersHolder;
 import by.epam.jmp.app.tradesystem.dataprovider.OrderProvider;

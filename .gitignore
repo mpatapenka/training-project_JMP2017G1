@@ -41,7 +41,8 @@ fabric.properties
 *.ipr
 
 ### Java ###
-*.class
+# Store Semaphore.class
+#*.class
 
 # BlueJ files
 *.ctxt
