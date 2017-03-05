@@ -20,6 +20,15 @@
         <maven-war-plugin.version>3.0.0</maven-war-plugin.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>by.epam.jmp.app</groupId>
+            <artifactId>TradeSystemCore</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>tradesystem-webapp</finalName>
 

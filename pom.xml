@@ -19,9 +19,6 @@
     <packaging>pom</packaging>
 
     <properties>
-        <!-- Build configuration properties -->
-        <external.jar.classpath>deps/</external.jar.classpath>
-
         <!-- Dependencies versions -->
         <junit.version>4.12</junit.version>
         <commons-lang3.version>3.5</commons-lang3.version>

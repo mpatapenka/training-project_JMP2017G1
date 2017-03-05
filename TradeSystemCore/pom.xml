@@ -24,10 +24,12 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
                 <configuration>
+                    <excludes>
+                        <exclude>*.properties</exclude>
+                    </excludes>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <classpathPrefix>${external.jar.classpath}</classpathPrefix>
                         </manifest>
                     </archive>
                 </configuration>
@@ -45,7 +47,7 @@
                         </goals>
                         <configuration>
                             <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/${external.jar.classpath}</outputDirectory>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

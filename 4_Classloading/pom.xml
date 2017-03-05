@@ -44,7 +44,6 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <mainClass>${maven-jar-plugin.mainClass}</mainClass>
-                            <classpathPrefix>${external.jar.classpath}</classpathPrefix>
                         </manifest>
                     </archive>
                 </configuration>
@@ -62,7 +61,7 @@
                         </goals>
                         <configuration>
                             <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/${external.jar.classpath}</outputDirectory>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
