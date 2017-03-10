@@ -41,3 +41,8 @@ List of modules will be updated if new one will be added.
     - See related module __*TradeSystemCore*__.
     - Look into package ***by.epam.jmp.app.tradesystem.core.context***.
     - Checkout 'JMP7.2-Architecture' branch for look into old version of architecture and find factories.
+    
+5. **JMP7.6-Architecture: Structural Patterns**
+    - See related module __*TradeSystemCore*__.
+    - Use unit tests here ***by.epam.jmp.app.tradesystem.core.facade.sqlite.SQLiteInstanceTest*** vor verification facade class SQLiteInstance.
+    All related with JDBC code you can find in ***by.epam.jmp.app.tradesystem.core.util.DBUtil***

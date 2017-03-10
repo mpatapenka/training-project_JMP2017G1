@@ -95,5 +95,6 @@ $RECYCLE.BIN/
 
 ### Custom user files ###
 log/
+*.db
 
 # End of https://www.gitignore.io/api/windows,intellij+iml,code-java,java,maven
